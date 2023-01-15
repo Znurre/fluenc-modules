@@ -3,7 +3,7 @@ function test()
 	return 2;
 }
 
-export int exp()
+export i32 exp()
 {
 	return test();
 }
