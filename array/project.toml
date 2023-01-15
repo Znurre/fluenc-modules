@@ -1,2 +1,2 @@
-type = module
-target = array
+type = "module"
+target = "array"

@@ -1,2 +1,2 @@
-type = module
-target = string
+type = "module"
+target = "string"
