@@ -20,17 +20,17 @@ namespace Range
 		return operation(product, item);
 	}
 
-	function size((any item, ...items), int i)
+	function size((any item, ...items), i32 i)
 	{
 		return tail size(...items, i + 1);
 	}
 
-	function size(any item, int i)
+	function size(any item, i32 i)
 	{
 		return i + 1;
 	}
 
-    function elementAt(any item, int index, int i)
+    function elementAt(any item, i32 index, i32 i)
     {
         if (i == index)
         {
@@ -40,7 +40,7 @@ namespace Range
         return nothing;
     }
 
-    function elementAt((any item, ...items), int index, int i)
+    function elementAt((any item, ...items), i32 index, i32 i)
     {
         if (i == index)
         {
@@ -50,7 +50,7 @@ namespace Range
         return tail elementAt(...items, index, i + 1);
     }
 
-    function set((any value, ...values), int index, any result, int i)
+    function set((any value, ...values), i32 index, any result, i32 i)
     {
         if (i == index)
         {
@@ -60,7 +60,7 @@ namespace Range
         return value -> set(...values, index, result, i + 1);
     }
 
-    function set(any value, int index, any result, int i)
+    function set(any value, i32 index, any result, i32 i)
     {
         if (i == index)
         {
