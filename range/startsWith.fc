@@ -2,7 +2,7 @@ import void printnum(i32 num);
 
 namespace Range
 {
-    function startsWith((i32 value, ...values), (i32 needle, ...pattern))
+    function startsWith((any value, ...values), (any needle, ...pattern))
     {
         puts(@"(...) (...)");
 
@@ -17,7 +17,7 @@ namespace Range
         return false;
     }
 
-    function startsWith(i32 value, i32 needle)
+    function startsWith(any value, any needle)
     {
         puts(@"() ()");
 
@@ -27,7 +27,7 @@ namespace Range
         return (value == needle);
     }
 
-    function startsWith((i32 value, ...values), i32 needle)
+    function startsWith((any value, ...values), any needle)
     {
         puts(@"(...) ()");
 
@@ -37,7 +37,7 @@ namespace Range
         return (value == needle);
     }
 
-    function startsWith(i32 value, (i32 needle, ...pattern))
+    function startsWith(any value, (any needle, ...pattern))
     {
         puts(@"() (...)");
 
