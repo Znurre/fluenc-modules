@@ -1,0 +1,27 @@
+namespace Range
+{
+    function startsWith((any value, ...values), (any needle, ...pattern))
+    {
+        if (value == needle)
+        {
+            return tail startsWith(...values, ...pattern);
+        }
+
+        return false;
+    }
+
+    function startsWith(any value, any needle)
+    {
+        return (value == needle);
+    }
+
+    function startsWith((any value, ...values), any needle)
+    {
+        return (value == needle);
+    }
+
+    function startsWith(any value, (any needle, ...pattern))
+    {
+        return false;
+    }
+}
