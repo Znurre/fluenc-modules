@@ -1,7 +1,12 @@
+import void printnum(i32 num);
+
 namespace Range
 {
     function startsWith((any value, ...values), (any needle, ...pattern))
     {
+        printnum(value);
+        printnum(needle);
+
         if (value == needle)
         {
             return tail startsWith(...values, ...pattern);
@@ -12,16 +17,25 @@ namespace Range
 
     function startsWith(any value, any needle)
     {
+        printnum(value);
+        printnum(needle);
+
         return (value == needle);
     }
 
     function startsWith((any value, ...values), any needle)
     {
+        printnum(value);
+        printnum(needle);
+
         return (value == needle);
     }
 
     function startsWith(any value, (any needle, ...pattern))
     {
+        printnum(value);
+        printnum(needle);
+
         return false;
     }
 }
