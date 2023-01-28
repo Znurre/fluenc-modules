@@ -1,14 +1,7 @@
-import void printnum(i32 num);
-
 namespace Range
 {
     function startsWith((any value, ...values), (any needle, ...pattern))
     {
-        puts(@"(...) (...)");
-
-        printnum(value);
-        printnum(needle);
-
         if (value == needle)
         {
             return tail startsWith(...values, ...pattern);
@@ -19,31 +12,16 @@ namespace Range
 
     function startsWith(any value, any needle)
     {
-        puts(@"() ()");
-
-        printnum(value);
-        printnum(needle);
-
         return (value == needle);
     }
 
     function startsWith((any value, ...values), any needle)
     {
-        puts(@"(...) ()");
-
-        printnum(value);
-        printnum(needle);
-
         return (value == needle);
     }
 
     function startsWith(any value, (any needle, ...pattern))
     {
-        puts(@"() (...)");
-
-        printnum(value);
-        printnum(needle);
-
         return false;
     }
 }
