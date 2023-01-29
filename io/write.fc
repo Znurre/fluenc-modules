@@ -1,0 +1,26 @@
+import i32 fputc(i32 c, i64 stream);
+
+namespace IO
+{
+    function write(i64 target, (any value, ...values))
+    {
+        write(target, value);
+
+        return tail write(target, ...values);
+    }
+
+    function write(i64 target, u8 value)
+    {
+        return fputc(target, Cast::toInt32(value));
+    }
+
+    function write(i64 target, i32 value)
+    {
+        return fputc(value, target);
+    }
+
+    function write(i64 target, without value)
+    {
+        return 0;
+    }
+}

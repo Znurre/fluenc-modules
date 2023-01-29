@@ -1,0 +1,10 @@
+import i64 getStdin();
+import i64 getStdout();
+import i64 getStderr();
+
+namespace IO
+{
+    global stdin: getStdin();
+    global stdout: getStdout();
+    global stderr: getStderr();
+}

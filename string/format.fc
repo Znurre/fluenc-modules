@@ -1,0 +1,52 @@
+namespace String
+{
+    function format((i32 char, ...string), (any value, ...values))
+    {
+        if (char == '{')
+        {
+            return nothing -> format(...string, (value, values));
+        }
+
+        if (char == '}')
+        {
+            return toString(value) -> format(...string, ...values);
+        }
+
+        return char -> format(...string, (value, values));
+    }
+
+    function format((i32 char, ...string), any value)
+    {
+        if (char == '{')
+        {
+            return nothing -> format(...string, value);
+        }
+
+        if (char == '}')
+        {
+            return toString(value) -> format(...string, nothing);
+        }
+
+        return char -> format(...string, value);
+    }
+
+    function format(i32 char, (any value, ...values))
+    {
+        return format(char, value);
+    }
+
+    function format(i32 char, any value)
+    {
+        if (char == '{')
+        {
+            return char;
+        }
+
+        if (char == '}')
+        {
+            return toString(value);
+        }
+
+        return char;
+    }
+}

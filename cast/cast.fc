@@ -1,0 +1,4 @@
+namespace Cast
+{
+    import i32 toInt32(u8 value);
+}

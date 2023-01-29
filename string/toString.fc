@@ -1,0 +1,12 @@
+namespace String
+{
+    function toString(i32 value)
+    {
+        return '0' + value % 10;
+    }
+
+    function toString(without value)
+    {
+        return nothing;
+    }
+}
