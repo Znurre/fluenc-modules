@@ -1,11 +1,16 @@
 namespace Range
 {
-	function select((any item, ...items), function (any) transformer)
+    function select(...items, function (any) transformer)
+    {
+        return _select(...items, transformer);
+    }
+
+	function _select((any item, ...items), function (any) transformer)
 	{
-		return transformer(item) -> select(...items, transformer);
+		return transformer(item) -> _select(...items, transformer);
 	}
 
-	function select(any item, function (any) transformer)
+	function _select(any item, function (any) transformer)
 	{
 		return transformer(item);
 	}

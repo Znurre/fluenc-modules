@@ -1,0 +1,37 @@
+namespace Range
+{
+	function concat(...xs, ...ys)
+	{
+		return _concat(...xs, ys);
+	}
+
+	function _concat((any x, ...xs), any y)
+	{
+		return x -> _concat(...xs, y);
+	}
+
+	function _concat(any x, any y)
+	{
+		return x -> _concat(y);
+	}
+
+	function _concat((any x, ...xs), ...ys)
+	{
+		return x -> _concat(...xs, ys);
+	}
+
+	function _concat((i32 x, ...xs))
+	{
+		return x -> _concat(...xs);
+	}
+
+	function _concat(i32 x, ...ys)
+	{
+		return x -> _concat(...ys);
+	}
+
+	function _concat(i32 y)
+	{
+		return y;
+	}
+}
