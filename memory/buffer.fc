@@ -1,0 +1,7 @@
+namespace Memory
+{
+    struct Buffer;
+
+    import Buffer malloc(i32 size);
+    import Buffer realloc(Buffer ptr, i32 new_size);
+}
