@@ -5,4 +5,6 @@ namespace Memory
     import Buffer malloc(i32 size);
     import Buffer realloc(Buffer ptr, i32 new_size);
     import Buffer empty();
+
+    import bool isEmpty(Buffer buffer);
 }
