@@ -5,5 +5,5 @@ void *empty()
 
 int isEmpty(void *buffer)
 {
-    return buffer;
+    return (int)buffer;
 }
