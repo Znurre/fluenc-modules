@@ -1,3 +1,5 @@
+#include <stddef.h>
+
 void *empty()
 {
     return 0;
