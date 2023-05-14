@@ -7,4 +7,6 @@ namespace Memory
     import Buffer empty();
 
     import bool isEmpty(Buffer buffer);
+
+    import buffer alloc(i64 size);
 }
