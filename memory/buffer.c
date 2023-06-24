@@ -24,7 +24,7 @@ void *allocate(size_t size)
 
 void *reallocate(void* buffer, size_t size)
 {
-    void *data = realloc(buffer, size + sizeof(size));
+    void *data = realloc(buffer - sizeof(size), size + sizeof(size));
 
     memcpy(data, &size, sizeof(size));
 
