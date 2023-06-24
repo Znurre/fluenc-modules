@@ -8,5 +8,6 @@ namespace Memory
 
     import bool isEmpty(Buffer buffer);
 
-    import buffer alloc(i64 size);
+    import buffer allocate(i64 size);
+    import buffer reallocate(buffer buf, i64 size);
 }
