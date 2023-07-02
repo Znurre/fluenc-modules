@@ -9,7 +9,7 @@ namespace Range
     {
         if (value == needle)
         {
-            return tail startsWith(...values, ...pattern);
+            return tail _startsWith(...values, ...pattern);
         }
 
         return false;

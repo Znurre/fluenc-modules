@@ -1,0 +1,32 @@
+namespace Range
+{
+    function equals(...left, ...right)
+    {
+        return _equals(...left, ...right);
+    }
+
+    function _equals((any left, ...lefts), (any right, ...rights))
+    {
+        if (left == right)
+        {
+            return tail _equals(...lefts, ...rights);
+        }
+
+        return false;
+    }
+
+    function _equals(any left, any right)
+    {
+        return (left == right);
+    }
+
+    function _equals((any left, ...lefts), any right)
+    {
+        return false;
+    }
+
+    function _equals(any left, (any right, ...rights))
+    {
+        return false;
+    }
+}
