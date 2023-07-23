@@ -1,0 +1,22 @@
+namespace Math
+{
+    function max(any x, any y)
+    {
+        if (x > y)
+        {
+            return x;
+        }
+
+        return y;
+    }
+
+    function min(any x, any y)
+    {
+        if (x > y)
+        {
+            return y;
+        }
+
+        return x;
+    }
+}
