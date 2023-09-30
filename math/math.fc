@@ -19,4 +19,19 @@ namespace Math
 
         return x;
     }
+
+    function sqrt(i32 number)
+    {
+        return _sqrt(number, 1, 1);
+    }
+
+    function _sqrt(i32 number, i32 subtrahend, i32 i)
+    {
+        if ((number - subtrahend) <= 0)
+        {
+            return i;
+        }
+
+        return tail _sqrt(number - subtrahend, subtrahend + 2, i + 1);
+    }
 }
