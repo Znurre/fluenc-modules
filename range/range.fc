@@ -74,4 +74,19 @@ namespace Range
 
         return value;
     }
+
+    function _iota(i32 i, i32 count)
+    {
+        if (i < count)
+        {
+            return i -> _iota(i + 1, count);
+        }
+
+        return i;
+    }
+
+    function iota(i32 count)
+    {
+        return _iota(0, count);
+    }
 }

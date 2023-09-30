@@ -34,4 +34,14 @@ namespace Math
 
         return tail _sqrt(number - subtrahend, subtrahend + 2, i + 1);
     }
+
+    function abs(i32 value)
+    {
+        if (value < 0)
+        {
+            return value * -1;
+        }
+
+        return value;
+    }
 }
