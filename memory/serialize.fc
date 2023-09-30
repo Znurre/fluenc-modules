@@ -3,16 +3,16 @@ namespace Memory
 	namespace details
 	{
 		import void set(buffer dest, i64 offset, i32 value);
-
-		function set(buffer dest, i64 offset, without value)
-		{
-			return nothing;
-		}
 	}
 
 	function serialize(...range)
 	{
 		return serialize(allocate(200i64), 0i64, ...range);
+	}
+
+	function serialize(buffer storage, i64 offset, (without c, ...remaining))
+	{
+		return tail serialize(storage, offset, ...remaining);
 	}
 
 	function serialize(buffer storage, i64 offset, (any c, ...remaining))
