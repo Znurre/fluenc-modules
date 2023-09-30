@@ -37,7 +37,7 @@ namespace String
 
     function _format(i32 char, (any value, ...values))
     {
-        return format(char, value);
+        return _format(char, value);
     }
 
     function _format(i32 char, any value)
