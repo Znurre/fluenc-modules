@@ -1,5 +1,25 @@
 namespace Range
 {
+    function count(i32 c, any item, any context, function (any, any) predicate)
+    {
+        if (predicate(item, context))
+        {
+            return c + 1;
+        }
+
+        return c;
+    }
+
+    function count(i32 c, (any item, ...items), any context, function (any, any) predicate)
+    {
+        if (predicate(item, context))
+        {
+            return tail count(c + 1, ...items, context, predicate);
+        }
+
+        return tail count(c, ...items, context, predicate);
+    }
+
     function all(any item, any context, function (any, any) predicate)
     {
         return predicate(item, context);
