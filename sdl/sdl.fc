@@ -93,4 +93,17 @@ namespace SDL
         i32 x: 0,
         i32 y: 0
     };
+
+    struct MouseWheelEvent
+    {
+        i32 type: 0,
+        i32 timestamp: 0,
+        i32 windowId: 0,
+        i32 which: 0,
+        i32 x: 0,
+        i32 y: 0,
+        u32 direction: 0u,
+        f32 preciseX: 0f,
+        f32 preciseY: 0f
+    };
 }

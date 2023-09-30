@@ -10,6 +10,7 @@ struct Event
     SDL_KeyboardEvent *key;
     SDL_MouseMotionEvent *motion;
     SDL_MouseButtonEvent *button;
+    SDL_MouseWheelEvent *wheel;
 };
 
 struct Event *SDL_WaitEventEx(struct Event *events)
@@ -23,6 +24,7 @@ struct Event *SDL_WaitEventEx(struct Event *events)
     memcpy(events->key, &event.key, sizeof(SDL_KeyboardEvent));
     memcpy(events->motion, &event.motion, sizeof(SDL_MouseMotionEvent));
     memcpy(events->button, &event.button, sizeof(SDL_MouseButtonEvent));
+    memcpy(events->wheel, &event.wheel, sizeof(SDL_MouseWheelEvent));
 
     return events;
 }
