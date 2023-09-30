@@ -24,6 +24,7 @@ namespace SDL
 	import i32 SDL_LowerBlit(i64 src, i64 srcRect, i64 dst, Rect dstRect);
 	import i32 SDL_UpdateWindowSurface(i64 window);
 	import i32 SDL_RenderCopy(i64 renderer, i64 texture, i64 srcrect, Rect dstrect);
+	import i32 SDL_SetRenderDrawBlendMode(i64 renderer, i32 blendMode);
 
     import void SDL_RenderPresent(i64 renderer);
 	import void SDL_FreeSurface(SDL_Surface surface);
@@ -43,6 +44,11 @@ namespace SDL
     global MOUSEBUTTONDOWN: 0x401u32;
     global MOUSEBUTTONUP: 0x402u32;
     global MOUSEWHEEL: 0x403u32;
+
+	global BLENDMODE_NONE: 0;
+	global BLENDMODE_BLEND: 1;
+	global BLENDMODE_ADD: 2;
+	global BLENDMODE_MOD: 4;
 
     global SDL_QUIT: 0x100u32;
 
