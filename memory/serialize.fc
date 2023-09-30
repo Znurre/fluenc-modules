@@ -28,7 +28,6 @@ namespace Memory
 	function serialize(buffer storage, i64 offset, any c)
 	{
 		details::set(storage, offset, c);
-		details::set(storage, offset + 1i64, 0);
 
 		return storage;
 	}
