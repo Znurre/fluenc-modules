@@ -2,7 +2,7 @@ namespace Range
 {
     function count(...items, any context, function (any, any) predicate)
     {
-        return _count(...items, context, predicate);
+        return _count(0, ...items, context, predicate);
     }
 
     function _count(i32 c, any item, any context, function (any, any) predicate)
