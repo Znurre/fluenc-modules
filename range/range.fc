@@ -1,5 +1,20 @@
 namespace Range
 {
+    function all(any item, any context, function (any, any) predicate)
+    {
+        return predicate(item, context);
+    }
+
+    function all((any item, ...items), any context, function (any, any) predicate)
+    {
+        if (predicate(item, context))
+        {
+            return tail all(...items, context, predicate);
+        }
+
+        return false;
+    }
+
     function select(...items, function (any) transformer)
     {
         return _select(...items, transformer);
