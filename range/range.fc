@@ -27,19 +27,19 @@ namespace Range
 
     function all(...items, any context, function (any, any) predicate)
     {
-        return _all(...items, context, predicate);
+        return all(...items, context, predicate);
     }
 
-    function _all(any item, any context, function (any, any) predicate)
+    function all(any item, any context, function (any, any) predicate)
     {
         return predicate(item, context);
     }
 
-    function _all((any item, ...items), any context, function (any, any) predicate)
+    function all((any item, ...items), any context, function (any, any) predicate)
     {
         if (predicate(item, context))
         {
-            return tail _all(...items, context, predicate);
+            return tail all(...items, context, predicate);
         }
 
         return false;
