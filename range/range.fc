@@ -27,7 +27,7 @@ namespace Range
 
     function all(...items, any context, function (any, any) predicate)
     {
-        return all(...items, context, predicate);
+        return tail all(...items, context, predicate);
     }
 
     function all(any item, any context, function (any, any) predicate)
