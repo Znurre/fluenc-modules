@@ -3,6 +3,11 @@ namespace Memory
 	namespace details
 	{
 		import void set(buffer dest, i64 offset, i32 value);
+
+		function set(buffer dest, i64 offset, without value)
+		{
+			return nothing;
+		}
 	}
 
 	function serialize(...range)
