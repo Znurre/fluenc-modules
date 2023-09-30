@@ -1,4 +1,5 @@
 namespace Cast
 {
     import i32 toInt32(u8 value);
+    import i64 toInt64(i32 value);
 }
