@@ -14,7 +14,7 @@ namespace Math
     {
         if (x > y)
         {
-            return x;
+            return y;
         }
 
         return x;
