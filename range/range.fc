@@ -1,6 +1,11 @@
 namespace Range
 {
-    function count(i32 c, any item, any context, function (any, any) predicate)
+    function count(...items, any context, function (any, any) predicate)
+    {
+        return _count(...items, context, predicate);
+    }
+
+    function _count(i32 c, any item, any context, function (any, any) predicate)
     {
         if (predicate(item, context))
         {
@@ -10,26 +15,31 @@ namespace Range
         return c;
     }
 
-    function count(i32 c, (any item, ...items), any context, function (any, any) predicate)
+    function _count(i32 c, (any item, ...items), any context, function (any, any) predicate)
     {
         if (predicate(item, context))
         {
-            return tail count(c + 1, ...items, context, predicate);
+            return tail _count(c + 1, ...items, context, predicate);
         }
 
-        return tail count(c, ...items, context, predicate);
+        return tail _count(c, ...items, context, predicate);
     }
 
-    function all(any item, any context, function (any, any) predicate)
+    function all(...items, any context, function (any, any) predicate)
+    {
+        return _all(...items, context, predicate);
+    }
+
+    function _all(any item, any context, function (any, any) predicate)
     {
         return predicate(item, context);
     }
 
-    function all((any item, ...items), any context, function (any, any) predicate)
+    function _all((any item, ...items), any context, function (any, any) predicate)
     {
         if (predicate(item, context))
         {
-            return tail all(...items, context, predicate);
+            return tail _all(...items, context, predicate);
         }
 
         return false;
