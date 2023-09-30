@@ -39,6 +39,7 @@ namespace SDL
 	global WINDOW_RESIZABLE: 0x00000020;
     global KEYDOWN: 0x300u32;
     global KEYUP: 0x301u32;
+    global MOUSEMOTION: 0x400u32;
     global MOUSEBUTTONDOWN: 0x401u32;
     global MOUSEBUTTONUP: 0x402u32;
     global MOUSEWHEEL: 0x403u32;
