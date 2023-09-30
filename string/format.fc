@@ -1,8 +1,8 @@
 namespace String
 {
-    function format(...format, ...values)
+    function format(...fmt, ...values)
     {
-        return _format(...format, ...values);
+        return _format(...fmt, ...values);
     }
 
     function _format((i32 char, ...string), (any value, ...values))
