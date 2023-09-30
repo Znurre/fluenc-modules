@@ -1,41 +1,46 @@
 namespace String
 {
-    function format((i32 char, ...string), (any value, ...values))
+    function format(...format, ...values)
+    {
+        return _format(...format, ...values);
+    }
+
+    function _format((i32 char, ...string), (any value, ...values))
     {
         if (char == '{')
         {
-            return nothing -> format(...string, (value, values));
+            return nothing -> _format(...string, (value, values));
         }
 
         if (char == '}')
         {
-            return toString(value) -> format(...string, ...values);
+            return toString(value) -> _format(...string, ...values);
         }
 
-        return char -> format(...string, (value, values));
+        return char -> _format(...string, (value, values));
     }
 
-    function format((i32 char, ...string), any value)
+    function _format((i32 char, ...string), any value)
     {
         if (char == '{')
         {
-            return nothing -> format(...string, value);
+            return nothing -> _format(...string, value);
         }
 
         if (char == '}')
         {
-            return toString(value) -> format(...string, nothing);
+            return toString(value) -> _format(...string, nothing);
         }
 
-        return char -> format(...string, value);
+        return char -> _format(...string, value);
     }
 
-    function format(i32 char, (any value, ...values))
+    function _format(i32 char, (any value, ...values))
     {
         return format(char, value);
     }
 
-    function format(i32 char, any value)
+    function _format(i32 char, any value)
     {
         if (char == '{')
         {
