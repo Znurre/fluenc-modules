@@ -17,6 +17,7 @@ void *allocate(size_t size)
     void *data = malloc(size + sizeof(size));
 
     memcpy(data, &size, sizeof(size));
+    memset(data + sizeof(size), 0, size);
 
     return data;
 }
