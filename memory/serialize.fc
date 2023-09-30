@@ -2,7 +2,12 @@ namespace Memory
 {
 	namespace details
 	{
-		import void set(buffer dest, i64 offset, i32 value);
+		import bool set(buffer dest, i64 offset, i32 value);
+
+		function set(buffer dest, i64 offset, without value)
+		{
+			return false;
+		}
 	}
 
 	function serialize(...range)
@@ -12,7 +17,12 @@ namespace Memory
 
 	function serialize(buffer storage, i64 offset, (without c, ...remaining))
 	{
-		return tail serialize(storage, offset, ...remaining);
+		if (details::set(storage, offset, c))
+		{
+			return tail serialize(storage, offset, ...remaining);
+		}
+
+		return tail serialize(Memory::reallocate(storage, offset + 3i64), offset + 1i64, ...remaining);
 	}
 
 	function serialize(buffer storage, i64 offset, (any c, ...remaining))
