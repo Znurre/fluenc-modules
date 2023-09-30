@@ -19,10 +19,10 @@ namespace Memory
 	{
 		if (details::set(storage, offset, c))
 		{
-			return tail serialize(storage, offset, ...remaining);
+			return tail serialize(Memory::reallocate(storage, offset + 3i64), offset + 1i64, ...remaining);
 		}
 
-		return tail serialize(Memory::reallocate(storage, offset + 3i64), offset + 1i64, ...remaining);
+		return tail serialize(storage, offset, ...remaining);
 	}
 
 	function serialize(buffer storage, i64 offset, any c)
