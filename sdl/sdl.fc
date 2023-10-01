@@ -11,7 +11,7 @@ namespace SDL
     import i32 SDL_RenderFillRect(i64 renderer, Rect rect);
 
     import i64 SDL_CreateRenderer(i64 window, i32 index, i32 flags);
-    import i64 SDL_CreateWindow(string title, i32 x, i32 y, i32 w, i32 h, i32 flags);
+    import i64 SDL_CreateWindow(string title, u32 x, u32 y, i32 w, i32 h, i32 flags);
 
 	import i64 SDL_LoadBMP_RW(i64 src, i32 freesrc);
 	import i64 SDL_RenderGetWindow(i64 renderer);
